@@ -200,7 +200,7 @@
           <div class="header__location">
             <div class="header__location_img"><img loading="lazy" src="<?php echo get_template_directory_uri()?>/static/img/location.svg" alt="location"/></div>
             <div class="header__location_text">
-              <span class="current_city">Ростов-на-Дону</span>
+              <span class="current_city">Ростов-на-Дону!</span>
               <ul class="header_cities">
                 <li>Москва</li>
                 <li>Санкт-Петербург</li>
