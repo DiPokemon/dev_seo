@@ -258,7 +258,7 @@
     <div id="dropdown">
       <span id="selectedCity">Ростов-на-Дону</span>
       <ul>
-      <li>Москва</li>
+        <li>Москва</li>
                 <li>Санкт-Петербург</li>
                 <li>Уфа</li>
                 <li>Тольяти</li>
