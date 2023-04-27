@@ -197,73 +197,12 @@
             <div class="logo_img"><?php the_custom_logo() ?></div>
             <div class="logo_text">topland</div>  
           </div>
-          
-            <!--
             <div class="header__location">
               <div class="header__location_img"><img loading="lazy" src="<?php echo get_template_directory_uri()?>/static/img/location.svg" alt="location"/></div>
-              <div class="header__location_text">
-                <span class="current_city">Ростов-на-Дону!</span>
-                <ul class="header_cities">
-                  <li>Москва</li>
-                  <li>Санкт-Петербург</li>
-                  <li>Уфа</li>
-                  <li>Тольяти</li>
-                  <li>Ижевск</li>
-                  <li>Самара</li>
-                  <li>Сочи</li>
-                  <li>Красноярск</li>
-                  <li>Набережные Челны</li>
-                  <li>Краснодар</li>
-                  <li>Саратов</li>
-                  <li>Новосибирск</li>
-                  <li>Волгоград</li>
-                  <li>Казань</li>
-                  <li>Нижний Новгород</li>
-                  <li>Екатеринбург</li>
-                  <li>Краснодар</li>
-                  <li>Воронеж</li>
-                  <li>Омск</li>
-                  <li>Челябинск</li>
-                  <li>Тюмень</li>
-                  <li>Пермь</li>
-                </ul>
-              </div>
-            </div> 
-            -->
-            <style>
-              /* Стили для списка городов */
-              #dropdown {
-                position: relative;
-                display: inline-block;
-              
-              }
-              #dropdown ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                background-color: #1f0c37;
-                border: 1px solid #ccc;
-                position: absolute;
-                z-index: 1;
-                display: none;
-                
-              }
-              #dropdown ul li {
-                padding: 5px;
-                cursor: pointer;
-              }
-              #dropdown ul li:hover {
-                background-color: #000000;
-              }
-            </style>  
-
-            <div class="header__location">
-              <div class="header__location_img"><img loading="lazy" src="<?php echo get_template_directory_uri()?>/static/img/location.svg" alt="location"/></div>
-
               <div class="header__location_text">
                 <div id="dropdown">
-                  <span id="selectedCity">Ростов-на-Дону</span>
-                  <ul>
+                <span id="selectedCity">Ростов-на-Дону</span>
+                  <ul class="header_cities">
                     <li>Москва</li>
                     <li>Санкт-Петербург</li>
                     <li>Уфа</li>
@@ -286,41 +225,12 @@
                     <li>Челябинск</li>
                     <li>Тюмень</li>
                     <li>Пермь</li>
+                    <li>Ростов-на-Дону</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <script>
-                var dropdown = document.getElementById("dropdown");
-                var cityList = dropdown.getElementsByTagName("ul")[0];
-                var selectedCity = document.getElementById("selectedCity");
-                
-                dropdown.addEventListener("mouseover", function() {
-                  cityList.style.display = "block";
-                });
-                
-                dropdown.addEventListener("mouseout", function() {
-                  if (!selectedCity.innerHTML) {
-                    cityList.style.display = "none";
-                  }
-                });
-                
-                cityList.addEventListener("click", function(e) {
-                  if (e.target && e.target.nodeName == "LI") {
-                    
-                    selectedCity.innerHTML = e.target.innerHTML;
-                    cityList.style.display = "none";
-                  }
-                });
 
-                window.addEventListener("click", function(e) {
-                  if (!dropdown.contains(e.target) && !selectedCity.innerHTML) {
-                    
-                     cityList.style.display = "none";
-                  }
-                });
-              </script>
-            
 
           <div class="header__hrVert"></div>
           <div class="header__contact">
