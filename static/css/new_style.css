@@ -325,6 +325,10 @@ main.page {
       -ms-flex-align: center;
           align-items: center;
   width: 200px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 5px;
 }
 
 .header__location_text {
