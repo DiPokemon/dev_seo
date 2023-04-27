@@ -253,7 +253,7 @@
                 cursor: pointer;
               }
               #dropdown ul li:hover {
-                background-color: #f2f2f2;
+                background-color: #000000;
               }
             </style>  
 
@@ -290,8 +290,7 @@
                 </div>
               </div>
             </div>
-
-              <script>
+            <script>
                 var dropdown = document.getElementById("dropdown");
                 var cityList = dropdown.getElementsByTagName("ul")[0];
                 var selectedCity = document.getElementById("selectedCity");
@@ -313,7 +312,15 @@
                     cityList.style.display = "none";
                   }
                 });
+
+                window.addEventListener("click", function(e) {
+                  if (!dropdown.contains(e.target) && !selectedCity.innerHTML) {
+                    
+                     cityList.style.display = "none";
+                  }
+                });
               </script>
+            
 
           <div class="header__hrVert"></div>
           <div class="header__contact">
