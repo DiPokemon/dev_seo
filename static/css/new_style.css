@@ -454,6 +454,10 @@ ul.header_cities {
   display: none;
 }
 
+.header__contact_wa-mob {
+  display: none;
+}
+
 /*---------------------------------------------------------------------------------------*/
 /*------------------------------------page__main-block-----------------------------------*/
 .main-background1-img {
@@ -2879,16 +2883,33 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
 .header__contact {
     z-index: 31;
   }
+  .header__contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 20px;
+  }
+  .fa-whatsapp {
+    font-size: 43px;
+  }
   .header__contact_telefon-mob {
+    display: block;
+    height: 40px;
+  }
+  .header__contact_telefon-mob img {
+    height: 40px;
+    fill: #f7f2ff;
+  }
+  .header__contact_wa-mob {
     display: block;
   }
   .header__contact_telefon,
 .header_contact_href {
     display: none;
-  }
-  .header__contact_telefon-mob img {
-    height: 40px;
-    fill: #f7f2ff;
   }
   /* .logo_text {
       display: none;

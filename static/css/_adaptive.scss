@@ -80,16 +80,28 @@
     .header__contact{
         z-index: 31;
     }
-    .header__contact_telefon-mob {
-         display: block
+    .header__contact{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
     }
+    .fa-whatsapp{
+        font-size: 43px;
+    }
+    .header__contact_telefon-mob {
+         display: block;
+         height: 40px;
+         img{
+            height: 40px;
+            fill: $main-white-color;
+        }
+    }
+    .header__contact_wa-mob {
+        display: block;
+      }
     .header__contact_telefon,
     .header_contact_href {
         display: none
-    }
-    .header__contact_telefon-mob img{
-        height: 40px;
-        fill: $main-white-color;
     }
     /* .logo_text {
         display: none;
