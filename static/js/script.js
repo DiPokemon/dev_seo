@@ -407,10 +407,6 @@ cityList.addEventListener("click", function(e) {
 });
 
 // Сохранение выбранного города
-// 
-var dropdown = document.getElementById("dropdown");
-var cityList = dropdown.getElementsByTagName("ul")[0];
-var selectedCity = document.getElementById("selectedCity");
 var savedCity = localStorage.getItem('selectedCity');
 if (savedCity) {
     selectedCity.innerHTML = savedCity;
