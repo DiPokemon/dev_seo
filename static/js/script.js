@@ -407,7 +407,7 @@ cityList.addEventListener("click", function(e) {
 });
 
 // Сохранение выбранного города
-
+// 
 var dropdown = document.getElementById("dropdown");
 var cityList = dropdown.getElementsByTagName("ul")[0];
 var selectedCity = document.getElementById("selectedCity");
