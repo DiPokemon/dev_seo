@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     function getRandomColor() {
         var letters = '0123456789ABCDEF';
         var color = '#';
@@ -12,46 +12,43 @@ $(document).ready(function () {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
-      }
-    $('.spotlight_key').each((i, el) => el.style.color = getRandomColor());      
+    }
+    $('.spotlight_key').each((i, el) => el.style.color = getRandomColor());
     if (window.innerWidth > 900) {
         $('.spotlight_key').each((i, el) => el.style.fontSize = getRandomInt(14, 20) + "px");
-    }
-    else if (window.innerWidth > 650) {
+    } else if (window.innerWidth > 650) {
         $('.spotlight_key').each((i, el) => el.style.fontSize = getRandomInt(14, 18) + "px");
+    } else if (window.innerWidth > 500) {
+        $('.spotlight_key').each((i, el) => el.style.fontSize = getRandomInt(13, 14) + "px");
+    } else {
+        $('.spotlight_key').each((i, el) => el.style.fontSize = getRandomInt(13, 14) + "px");
     }
-    else if (window.innerWidth > 500){ 
-        $('.spotlight_key').each((i, el) => el.style.fontSize = getRandomInt(13, 14)+"px");
-    }
-    else { 
-        $('.spotlight_key').each((i, el) => el.style.fontSize = getRandomInt(13, 14)+"px");
-    }
-    
-    
 
 
-    $('.accordion__item').click(function () {
+
+
+    $('.accordion__item').click(function() {
         $(this).toggleClass('open');
     });
 
-    $('.header__burger').click(function (event) {
+    $('.header__burger').click(function(event) {
         $('.header__burger,.header__menu').toggleClass('active');
         $('body').toggleClass('lock')
     });
 
     if ($('window').width() <= 768) {
-        $('.first_lvl_menu>.sub-menu>li>menu__link').click(function (event) {
+        $('.first_lvl_menu>.sub-menu>li>menu__link').click(function(event) {
             event.preventDefault();
         });
-    };    
-    
-    (function ($) {
+    };
+
+    (function($) {
         var methods = {
-            init: function (options) {
-                return this.each(function () {
+            init: function(options) {
+                return this.each(function() {
                     var $this = $(this),
                         data = $this.data('eraser');
-    
+
                     if (!data) {
                         var width = $(".spotlight_wrap").width(),
                             height = $(".spotlight_wrap").height(),
@@ -66,37 +63,37 @@ $(document).ready(function () {
                             numParts = colParts * Math.floor(height / size),
                             n = numParts,
                             ctx = canvas.getContext("2d");
-                        
+
                         // replace target with canvas
                         $this.after($canvas);
                         canvas.id = this.id;
                         canvas.className = this.className;
                         canvas.width = width;
                         canvas.height = height;
-                        
+
                         ctx.drawImage(this, 0, 0);
                         $this.remove();
-    
+
                         // prepare context for drawing operations
                         ctx.globalCompositeOperation = "destination-out";
                         ctx.strokeStyle = 'rgba(255,0,0,255)';
                         ctx.lineWidth = size;
-    
-                        ctx.lineCap = "round";
-                       
 
-                        
-                        
+                        ctx.lineCap = "round";
+
+
+
+
                         // bind events
                         $canvas.bind('mousemove.eraser', methods.mouseMove);
                         $canvas.bind('mousedown.eraser', methods.mouseDown);
                         $canvas.bind('touchstart.eraser', methods.touchStart);
                         $canvas.bind('touchmove.eraser', methods.touchMove);
                         $canvas.bind('touchend.eraser', methods.touchEnd);
-    
+
                         // reset parts
                         while (n--) parts.push(1);
-    
+
                         // store values
                         data = {
                             posX: pos.left,
@@ -122,9 +119,9 @@ $(document).ready(function () {
                             completeFunction: completeFunction
                         };
                         $canvas.data('eraser', data);
-    
+
                         // listen for resize event to update offset values	
-                        $(window).resize(function () {
+                        $(window).resize(function() {
                             var pos = $canvas.offset();
                             data.posX = pos.left;
                             data.posY = pos.top;
@@ -132,10 +129,10 @@ $(document).ready(function () {
                     }
                 });
             },
-            touchStart: function (event) {
+            touchStart: function(event) {
                 var $this = $(this),
                     data = $this.data('eraser');
-    
+
                 if (!data.touchDown) {
                     var t = event.originalEvent.changedTouches[0],
                         tx = t.pageX - data.posX,
@@ -148,10 +145,10 @@ $(document).ready(function () {
                     event.preventDefault();
                 }
             },
-            touchMove: function (event) {
+            touchMove: function(event) {
                 var $this = $(this),
                     data = $this.data('eraser');
-    
+
                 if (data.touchDown) {
                     var ta = event.originalEvent.changedTouches,
                         n = ta.length;
@@ -171,10 +168,10 @@ $(document).ready(function () {
                         }
                 }
             },
-            touchEnd: function (event) {
+            touchEnd: function(event) {
                 var $this = $(this),
                     data = $this.data('eraser');
-    
+
                 if (data.touchDown) {
                     var ta = event.originalEvent.changedTouches,
                         n = ta.length;
@@ -186,8 +183,8 @@ $(document).ready(function () {
                         }
                 }
             },
-    
-            evaluatePoint: function (data, tx, ty) {
+
+            evaluatePoint: function(data, tx, ty) {
                 var p = Math.floor(tx / data.size) + Math.floor(ty / data.size) * data.colParts;
                 if (p >= 0 && p < data.numParts) {
                     data.ratio += data.parts[p];
@@ -199,10 +196,10 @@ $(document).ready(function () {
                         }
                     }
                 }
-    
+
             },
-    
-            mouseDown: function (event) {
+
+            mouseDown: function(event) {
                 var $this = $(this),
                     data = $this.data('eraser'),
                     tx = event.pageX - data.posX,
@@ -219,8 +216,8 @@ $(document).ready(function () {
                 $(document).bind('mouseup.eraser', data, methods.mouseUp);
                 event.preventDefault();
             },
-    
-            mouseMove: function (event) {
+
+            mouseMove: function(event) {
                 var $this = $(this),
                     data = $this.data('eraser'),
                     tx = event.pageX - data.posX,
@@ -234,8 +231,8 @@ $(document).ready(function () {
                 data.ctx.stroke();
                 event.preventDefault();
             },
-    
-            mouseUp: function (event) {
+
+            mouseUp: function(event) {
                 var data = event.data,
                     $this = data.canvas;
                 data.touchDown = false;
@@ -243,8 +240,8 @@ $(document).ready(function () {
                 $(document).unbind('mouseup.eraser');
                 event.preventDefault();
             },
-    
-            clear: function () {
+
+            clear: function() {
                 var $this = $(this),
                     data = $this.data('eraser');
                 if (data) {
@@ -256,18 +253,18 @@ $(document).ready(function () {
                     if (data.completeFunction != null) data.completeFunction();
                 }
             },
-    
-            size: function (value) {
+
+            size: function(value) {
                 var $this = $(this),
                     data = $this.data('eraser');
-                
+
                 if (data && value) {
                     data.size = value;
                     data.ctx.lineWidth = value;
                 }
             },
-    
-            reset: function () {
+
+            reset: function() {
                 var $this = $(this),
                     data = $this.data('eraser');
                 if (data) {
@@ -280,10 +277,10 @@ $(document).ready(function () {
                     data.complete = false;
                 }
             }
-    
+
         };
-    
-        $.fn.eraser = function (method) {
+
+        $.fn.eraser = function(method) {
             if (methods[method]) {
                 return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
             } else if (typeof method === 'object' || !method) {
@@ -293,80 +290,81 @@ $(document).ready(function () {
             }
         };
     })(jQuery);
-    
+
     addEventListener("load", init, false);
-                
+
     function init(event) {
         $("#redux").eraser({ size: 30 });
-        
-                    
+
+
         // you can alse specify the brush size (in pixel) by using options :
         // $("#redux").eraser({size: 10});
     }
-                
+
     function remove(event) {
         $("#redux").eraser('clear');
         event.preventDefault();
     }
-                
+
     function reset(event) {
         $("#redux").eraser('reset');
         event.preventDefault();
     }
-    
+
     $(".spotlight_wrap").mousemove(function(e) {
         var parentOffset = $(this).parent().offset();
         var posX = (e.pageX - parentOffset.left) - 30;
         var posY = (e.pageY - parentOffset.top) - 30;
-      
+
         $('mask g').attr('transform', 'translate(' + posX + ',' + posY + ')');
-      });
-   
-           
-    
-    function setEqualHeight(columns){
+    });
+
+
+
+    function setEqualHeight(columns) {
         var tallestcolumn = 0;
         columns.each(
-            function(){
+            function() {
                 currentHeight = $(this).height();
-                if(currentHeight > tallestcolumn){
+                if (currentHeight > tallestcolumn) {
                     tallestcolumn = currentHeight;
                 }
             }
         );
-        columns.attr('style','min-height:' + tallestcolumn + 'px');
+        columns.attr('style', 'min-height:' + tallestcolumn + 'px');
     }
     $(document).ready(function() {
         setEqualHeight($(".offer_block-tariff-top"));
     });
     $(document).ready(function() {
         setEqualHeight($(".case_slide__title"));
-    });    
+    });
     $(document).ready(function() {
         setEqualHeight($(".services-block__text"));
-    });  
+    });
 });
 
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function() {
     //LazyLoad for MAP
-    let map_container = document.getElementById('map_container');      
-    let options_map = {          
-        once: true,          
-        passive: true,          
-        capture: true      
-    };      
-    map_container.addEventListener('click', start_lazy_map, options_map);      
-    map_container.addEventListener('mouseover', start_lazy_map, options_map);      
-    map_container.addEventListener('touchstart', start_lazy_map, options_map);      
-    map_container.addEventListener('touchmove', start_lazy_map, options_map);        
-    let map_loaded = false;      
-    function start_lazy_map() {          
-        if (!map_loaded) {              
-            let map_block = document.getElementById('ymap_lazy');              
-            map_loaded = true;              
-            map_block.setAttribute('src', map_block.getAttribute('data-src'));              
-            map_block.removeAttribute('data-src');          
-        }      
+    let map_container = document.getElementById('map_container');
+    let options_map = {
+        once: true,
+        passive: true,
+        capture: true
+    };
+    map_container.addEventListener('click', start_lazy_map, options_map);
+    map_container.addEventListener('mouseover', start_lazy_map, options_map);
+    map_container.addEventListener('touchstart', start_lazy_map, options_map);
+    map_container.addEventListener('touchmove', start_lazy_map, options_map);
+    let map_loaded = false;
+
+    function start_lazy_map() {
+        if (!map_loaded) {
+            let map_block = document.getElementById('ymap_lazy');
+            map_loaded = true;
+            map_block.setAttribute('src', map_block.getAttribute('data-src'));
+            map_block.removeAttribute('data-src');
+        }
     };
 }, false);
 
@@ -382,4 +380,45 @@ $(window).scroll(function() {
         header.removeClass("top-0");
     }
 });
-      
+//Вывод списка городов
+var dropdown = document.getElementById("dropdown");
+var cityList = dropdown.getElementsByTagName("ul")[0];
+var selectedCity = document.getElementById("selectedCity");
+
+dropdown.addEventListener("mouseover", function() {
+    cityList.style.display = "block";
+});
+
+dropdown.addEventListener("mouseout", function() {
+    if (!selectedCity.innerHTML) {
+        cityList.style.display = "none";
+    } else {
+        cityList.addEventListener("mouseout", function() {
+            cityList.style.display = "none";
+        });
+    }
+});
+cityList.addEventListener("click", function(e) {
+    if (e.target && e.target.nodeName == "LI") {
+
+        selectedCity.innerHTML = e.target.innerHTML;
+        cityList.style.display = "none";
+    }
+});
+
+// Сохранение выбранного города
+
+var dropdown = document.getElementById("dropdown");
+var cityList = dropdown.getElementsByTagName("ul")[0];
+var selectedCity = document.getElementById("selectedCity");
+var savedCity = localStorage.getItem('selectedCity');
+if (savedCity) {
+    selectedCity.innerHTML = savedCity;
+}
+cityList.addEventListener("click", function(e) {
+    if (e.target && e.target.nodeName == "LI") {
+        selectedCity.innerHTML = e.target.innerHTML;
+        localStorage.setItem('selectedCity', selectedCity.innerHTML);
+        cityList.style.display = "none";
+    }
+});
