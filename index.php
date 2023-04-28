@@ -245,6 +245,87 @@
               </div>
             </section>
 
+            <section>
+              <div class="_container">
+                <div class="tariffs_tabs__title">
+                  <h2 class="_h2 section_title">Тарифы</h2>
+                </div>
+                <div class="tabs">                  
+                    <input type="radio" name="tab_btn" id="tab_btn_1" value="" checked>
+                    <label for="tab_btn_1">Разработка</label>
+                    <input type="radio" name="tab_btn" id="tab_btn_2" value="">
+                    <label for="tab_btn_2">SEO</label>
+                    <input type="radio" name="tab_btn" id="tab_btn_3" value="">
+                    <label for="tab_btn_3">Контекстная реклама</label>
+                    <input type="radio" name="tab_btn" id="tab_btn_4" value="">
+                    <label for="tab_btn_4">Маркетплейсы</label>                                 
+                        
+                  <div id="tab_1" class="tabs_block">
+                      <div class="tab_header">
+                        <div class="tab_title">Разработка под ключ</div>
+                        <div class="tab_price">от <span>50 000</span> ₽</div>
+                      </div>
+                      <div class="tab_body">
+                        Разрабатываем индивидуальные сайты с продающим дизайном, интерактивным функционалом под разные бизнес задачи.
+                        Основательно прорабатываем каждый из этапов разработки. Особое внимание уделяем стадии тестирования перед сдачей проекта.
+                      </div>
+                      <div class="tab_footer">
+                        <div class="tab_btn">
+
+                        </div>
+                      </div>
+                  </div>
+                  <div id="tab_2" class="tabs_block">
+                      <div class="tab_header">
+                        <div class="tab_title">SEO</div>
+                        <div class="tab_price">от <span>21 000</span> ₽</div>
+                      </div>
+                      <div class="tab_body">
+                        SEO продвижение — эффективный маркетинговый инструмент, который принесет вам новых клиентов при грамотной оптимизации. 
+                        Результаты будут видны не сразу, как это происходит в рекламе. SEO — это длительная стратегия, которая и результат приносит 
+                        на более долгое время.
+                      </div>
+                      <div class="tab_footer">
+                        <div class="tab_btn">
+                      
+                        </div>
+                      </div>
+                  </div>
+                  <div id="tab_3" class="tabs_block">
+                      <div class="tab_header">
+                        <div class="tab_title">Контекстная реклама </div>
+                        <div class="tab_price">от <span>25 000</span> ₽ / месяц</div>
+                      </div>
+                      <div class="tab_body">
+                        Контекстная реклама – один из самых эффективных источников трафика на ваш сайт. Размещение рекламы в Яндексе и Google 
+                        поможет Вам в разы увеличить продажи, оповестить и завлечь нужный контингент клиентов и выработать позитивное мнение о компании.
+                      </div>
+                      <div class="tab_footer">
+                        <div class="tab_btn">
+                      
+                        </div>
+                      </div>
+                  </div>
+                  <div id="tab_4" class="tabs_block">
+                      <div class="tab_header">
+                        <div class="tab_title">Маркетплейсы</div>
+                        <div class="tab_price">от <span>25 000</span> ₽</div>
+                      </div>
+                      <div class="tab_body">
+                        Все больше компаний появляются на маркетплейсах для того чтобы вести там свой бизнес, и получать хорошую прибыль. 
+                        Но конкуренция везде огромная. Поэтому, необходимо понимать как можно выделиться и результативно продвинуть свой 
+                        товар на онлайн-площадке.
+                      </div>
+                      <div class="tab_footer">
+                        <div class="tab_btn">
+                      
+                        </div>
+                      </div>
+                  </div>
+                </div>  
+              </div>
+            </section>
+
             <section class="page__cases-block cases">
               <div class="cases-block__container _container">
                 <div class="cases-block__body">
@@ -444,86 +525,7 @@
               </div>
             </section>      
 
-            <section>
-              <div class="_container">
-                <div class="tariffs_tabs__title">
-                  <h2 class="_h2 section_title">Тарифы</h2>
-                </div>
-                <div class="tabs">                  
-                    <input type="radio" name="tab_btn" id="tab_btn_1" value="" checked>
-                    <label for="tab_btn_1">Разработка</label>
-                    <input type="radio" name="tab_btn" id="tab_btn_2" value="">
-                    <label for="tab_btn_2">SEO</label>
-                    <input type="radio" name="tab_btn" id="tab_btn_3" value="">
-                    <label for="tab_btn_3">Контекстная реклама</label>
-                    <input type="radio" name="tab_btn" id="tab_btn_4" value="">
-                    <label for="tab_btn_4">Маркетплейсы</label>                                 
-                        
-                  <div id="tab_1" class="tabs_block">
-                      <div class="tab_header">
-                        <div class="tab_title">Разработка под ключ</div>
-                        <div class="tab_price">от <span>50 000</span> ₽</div>
-                      </div>
-                      <div class="tab_body">
-                        Разрабатываем индивидуальные сайты с продающим дизайном, интерактивным функционалом под разные бизнес задачи.
-                        Основательно прорабатываем каждый из этапов разработки. Особое внимание уделяем стадии тестирования перед сдачей проекта.
-                      </div>
-                      <div class="tab_footer">
-                        <div class="tab_btn">
-
-                        </div>
-                      </div>
-                  </div>
-                  <div id="tab_2" class="tabs_block">
-                      <div class="tab_header">
-                        <div class="tab_title">SEO</div>
-                        <div class="tab_price">от <span>21 000</span> ₽</div>
-                      </div>
-                      <div class="tab_body">
-                        SEO продвижение — эффективный маркетинговый инструмент, который принесет вам новых клиентов при грамотной оптимизации. 
-                        Результаты будут видны не сразу, как это происходит в рекламе. SEO — это длительная стратегия, которая и результат приносит 
-                        на более долгое время.
-                      </div>
-                      <div class="tab_footer">
-                        <div class="tab_btn">
-                      
-                        </div>
-                      </div>
-                  </div>
-                  <div id="tab_3" class="tabs_block">
-                      <div class="tab_header">
-                        <div class="tab_title">Контекстная реклама </div>
-                        <div class="tab_price">от <span>25 000</span> ₽ / месяц</div>
-                      </div>
-                      <div class="tab_body">
-                        Контекстная реклама – один из самых эффективных источников трафика на ваш сайт. Размещение рекламы в Яндексе и Google 
-                        поможет Вам в разы увеличить продажи, оповестить и завлечь нужный контингент клиентов и выработать позитивное мнение о компании.
-                      </div>
-                      <div class="tab_footer">
-                        <div class="tab_btn">
-                      
-                        </div>
-                      </div>
-                  </div>
-                  <div id="tab_4" class="tabs_block">
-                      <div class="tab_header">
-                        <div class="tab_title">Маркетплейсы</div>
-                        <div class="tab_price">от <span>25 000</span> ₽</div>
-                      </div>
-                      <div class="tab_body">
-                        Все больше компаний появляются на маркетплейсах для того чтобы вести там свой бизнес, и получать хорошую прибыль. 
-                        Но конкуренция везде огромная. Поэтому, необходимо понимать как можно выделиться и результативно продвинуть свой 
-                        товар на онлайн-площадке.
-                      </div>
-                      <div class="tab_footer">
-                        <div class="tab_btn">
-                      
-                        </div>
-                      </div>
-                  </div>
-                </div>  
-              </div>
-            </section>
+           
 
             <section class="form_row">
               <div class="_container">

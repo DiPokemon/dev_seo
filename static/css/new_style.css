@@ -2541,6 +2541,9 @@ span.contacts_item-title {
 .page_testimonials .main_block__wrapper {
   max-width: 100%;
 }
+.page_testimonials .main_block__wrapper .reviews-block__slide {
+  max-width: 100%;
+}
 
 /*---------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------form-----------------------------------------*/

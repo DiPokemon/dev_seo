@@ -2268,8 +2268,14 @@ span.contacts_item-title {
 .page_testimonials{
     .main_block__wrapper{
         max-width: 100%;
+
+        .reviews-block__slide{
+            max-width: 100%;
+        }
     } 
-} 
+
+    
+}
 
 /*---------------------------------------------------------------------------------------------------*/
 
