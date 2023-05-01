@@ -1307,6 +1307,9 @@ section.form_row {
 .page__reviews-block {
   position: relative;
 }
+.page__reviews-block .reviews-slide .reviews_image {
+  display: none;
+}
 
 .reviews-block__body {
   position: relative;
@@ -2538,11 +2541,31 @@ span.contacts_item-title {
 }
 
 /* -- PAGE TESTIMONIALS --*/
-.page_testimonials .main_block__wrapper {
+.page__reviews-block.page_testimonials .main_block__wrapper {
   max-width: 100%;
 }
-.page_testimonials .main_block__wrapper .reviews-block__slide {
+.page__reviews-block.page_testimonials .main_block__wrapper .reviews-slide {
   max-width: 100%;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.page__reviews-block.page_testimonials .main_block__wrapper .reviews-slide .reviews_image {
+  display: block;
+  width: 50%;
+}
+.page__reviews-block.page_testimonials .main_block__wrapper .reviews-slide .reviews_image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px 0px 0px 5px;
+}
+.page__reviews-block.page_testimonials .main_block__wrapper .reviews-slide .reviews_body {
+  width: 50%;
 }
 
 /*---------------------------------------------------------------------------------------------------*/
@@ -3317,6 +3340,27 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
   .question-triple_stars_right,
   .reviews-block__body .triple_stars {
     display: none;
+  }
+  .page__reviews-block.page_testimonials .main_block__wrapper .reviews-slide {
+    max-width: 100%;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .page__reviews-block.page_testimonials .main_block__wrapper .reviews-slide .reviews_image {
+    display: block;
+    width: 100%;
+  }
+  .page__reviews-block.page_testimonials .main_block__wrapper .reviews-slide .reviews_image img {
+    height: 100%;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .page__reviews-block.page_testimonials .main_block__wrapper .reviews-slide .reviews_body {
+    width: 100%;
   }
   .service-selection__content {
     margin-left: 0;

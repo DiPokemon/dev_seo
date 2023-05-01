@@ -14,7 +14,7 @@
                 <div class="main_block__wrapper">
                     <div class="slider_wrapper">
                         <div class="reviews_slider">
-                            <?php echo do_shortcode('[topland_reviews]'); ?>
+                            <?php echo do_shortcode('[seo_reviews]'); ?>
                         </div>
                         <div class="slider-controls">
                             <button type="button" class="reviews_slide-m-prev slide-m-prev"></button>
