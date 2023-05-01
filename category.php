@@ -205,7 +205,7 @@
                     </div>
                 </section>
 
-                <section class="page__service-offer">                                      
+                <section class="page__service-offer categorry_test">                                      
                     <div class="cases-block__container">
                         <div class="cases-block__body">
                             <div class="cases-block__title">
