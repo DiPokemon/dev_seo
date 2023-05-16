@@ -19,39 +19,10 @@
                 <section class="page-header">
                     <?php if ( function_exists( 'topland_breadcrumbs' ) ) topland_breadcrumbs(); ?>  
                     <h1 class="page-header__title"><?php single_cat_title(); ?></h1>
-
-                    <div class="category_top-text">
-                            <?= $top_text ?>
-                    </div>
                 </section>
                 
-                
-
-                <section section="page__service-offer">
-                    <div class="tariffs-block__container">                            
-                        <div class="tariffs-block__title">
-                            <h2 class="_h2">Тарифы</h2>
-                        </div>
-                        <?php if (!empty($tariffs_text)): ?>
-                            <div class="tariffs_text service_text-block">
-                                <?= $tariffs_text ?>
-                            </div>
-                        <?php endif;?> 
-                        <div class="slider_wrapper">
-                            <div class="tariff_slider">
-                                <?php echo do_shortcode('[topland_tariffs]'); ?>
-                            </div>
-                        </div>                        
-                    </div> 
-                </section>
-
-                <section class="form_row">
-                    <div class="page_contacts-form contact_form-row">
-                        <?php echo do_shortcode('[contact-form-7 id="1968" title="Контактная форма 1"]'); ?>
-                    </div>
-                </section>
-
-                <section class="page__services-block services">
+                 <!-- Блок услуги -->
+                 <section class="page__services-block services">
                     <div class="services-block__container _container">
                         <div class="services-block__body">
                             <div class="services-block__grid">
@@ -100,111 +71,36 @@
                         
                     </div>
                 </section>
-
-                <?php if (!empty($after_posts_text)): ?>                
-                    <section>
-                        <div class="_container">
-                            <div>
-                                <h2 class="_h2 section_title"><?= $after_posts_title ?></h2>
-                            </div>                        
-                            <div class="cases_text service_text-block">
-                                <?= $after_posts_text ?>
-                            </div>                            
-                        </div>                
-                    </section>
-                <?php endif;?>
-
-                <?php if($steps): ?>
-                    <section>
-                        <div class="_container">
-                            <div>
-                                <h2 class="_h2 section_title"><?= $steps_block_title ?></h2>
-                            </div> 
-                            <div class="accordion">
-                                
-                                    <?php $i=0; ?>
-                                    <?php foreach($steps as $step): ?>                                    
-                                        <input type="checkbox" name="chacor" id="step_<?= $i; ?>" />
-                                        <label for="step_<?= $i; ?>"><?= $step['step_title'] ?></label>
-                                        <div class="acor-body">
-                                            <?= $step['step_text'] ?>
-                                        </div>
-                                        <?php $i++ ?>
-                                    <?php endforeach ?>
-                                    
-                               
-                                
+                
+                <!-- Тарифы -->
+                <section section="page__service-offer">
+                    <div class="tariffs-block__container">                            
+                        <div class="tariffs-block__title">
+                            <h2 class="_h2">Тарифы</h2>
+                        </div>
+                        <?php if (!empty($tariffs_text)): ?>
+                            <div class="tariffs_text service_text-block">
+                                <?= $tariffs_text ?>
                             </div>
-                        </div>
-                    </section>  
-                <?php else : ?>
-   
-                <?php endif; ?>
-
-                <section>
-                    <div class="_container">
-                        <div>
-                        <h2 class="_h2 section_title">Наши гарантии</h2>
-                        </div>
+                        <?php endif;?> 
                         <div class="slider_wrapper">
-                        <div class="guarantee_slider">
+                            <div class="tariff_slider">
+                                <?php echo do_shortcode('[topland_tariffs]'); ?>
+                            </div>
+                        </div>                        
+                    </div> 
+                </section>
+                <!-- Верхний текст -->
+                <div class="category_top-text">
+                            <?= $top_text ?>
+                </div>
 
-                            <div class="guarantee_item">
-                            <div class="guarantee_icon"><i class="fas fa-hand-holding-usd"></i></div>
-                            <div class="guarantee_text">Оплата за результат</div>
-                            </div>
-                            
-                            <div class="guarantee_item">
-                            <div class="guarantee_icon"><i class="fas fa-clipboard-check"></i></div>
-                            <div class="guarantee_text">Заключение договора</div>
-                            </div>
-
-                            <div class="guarantee_item">
-                            <div class="guarantee_icon"><i class="fas fa-users"></i></div>
-                            <div class="guarantee_text">Команда специалистов</div>
-                            </div>
-
-                            <div class="guarantee_item">
-                            <div class="guarantee_icon"><i class="fas fa-thumbs-up"></i></div>
-                            <div class="guarantee_text">Белые методы продвижения</div>
-                            </div>
-
-                            <div class="guarantee_item">
-                            <div class="guarantee_icon"><i class="fas fa-desktop"></i></div>
-                            <div class="guarantee_text">Улучшение юзабилити сайта</div>
-                            </div>
-
-                            <div class="guarantee_item">
-                            <div class="guarantee_icon"><i class="fas fa-funnel-dollar"></i></div>
-                            <div class="guarantee_text">Повышение конверсии сайта</div>
-                            </div>
-
-                            <div class="guarantee_item">
-                            <div class="guarantee_icon"><i class="fas fa-route"></i></div>
-                            <div class="guarantee_text">Четкая стратегия развития проекта</div>
-                            </div>
-                            
-                            <div class="guarantee_item">
-                            <div class="guarantee_icon"><i class="far fa-eye"></i></div>
-                            <div class="guarantee_text">Прозрачная отчетность</div>
-                            </div>
-
-                            <div class="guarantee_item">
-                            <div class="guarantee_icon"><i class="fas fa-shield-alt"></i></div>
-                            <div class="guarantee_text">Безопасносность</div>
-                            </div>
-
-                            <div class="guarantee_item">
-                            <div class="guarantee_icon"><i class="fas fa-handshake"></i></div>
-                            <div class="guarantee_text">Индивидуальный подход</div>
-                            </div>
-
-                        </div>
-                        </div>
-                        
+                <section class="form_row">
+                    <div class="page_contacts-form contact_form-row">
+                        <?php echo do_shortcode('[contact-form-7 id="1968" title="Контактная форма 1"]'); ?>
                     </div>
                 </section>
-
+                <!-- Кейсы, форма обратной связи -->
                 <section class="page__service-offer categorry_test">                                      
                     <div class="cases-block__container">
                         <div class="cases-block__body">
@@ -268,8 +164,99 @@
                     <div class="page_contacts-form contact_form-row">
                         <?php echo do_shortcode('[contact-form-7 id="1968" title="Контактная форма 1"]'); ?>
                     </div>
-                </section>
+                </section>           
 
+                <!-- Этапы -->
+                <?php if($steps): ?>
+                    <section>
+                        <div class="_container">
+                            <div>
+                                <h2 class="_h2 section_title"><?= $steps_block_title ?></h2>
+                            </div> 
+                            <div class="accordion">
+                                
+                                    <?php $i=0; ?>
+                                    <?php foreach($steps as $step): ?>                                    
+                                        <input type="checkbox" name="chacor" id="step_<?= $i; ?>" />
+                                        <label for="step_<?= $i; ?>"><?= $step['step_title'] ?></label>
+                                        <div class="acor-body">
+                                            <?= $step['step_text'] ?>
+                                        </div>
+                                        <?php $i++ ?>
+                                    <?php endforeach ?>
+                                    
+                               
+                                
+                            </div>
+                        </div>
+                    </section>  
+                <?php else : ?>
+                <?php endif; ?>
+                <!-- Гарантии -->
+                <section>
+                    <div class="_container">
+                        <div>
+                        <h2 class="_h2 section_title">Наши гарантии</h2>
+                        </div>
+                        <div class="slider_wrapper">
+                        <div class="guarantee_slider">
+
+                            <div class="guarantee_item">
+                            <div class="guarantee_icon"><i class="fas fa-hand-holding-usd"></i></div>
+                            <div class="guarantee_text">Оплата за результат</div>
+                            </div>
+                            
+                            <div class="guarantee_item">
+                            <div class="guarantee_icon"><i class="fas fa-clipboard-check"></i></div>
+                            <div class="guarantee_text">Заключение договора</div>
+                            </div>
+
+                            <div class="guarantee_item">
+                            <div class="guarantee_icon"><i class="fas fa-users"></i></div>
+                            <div class="guarantee_text">Команда специалистов</div>
+                            </div>
+
+                            <div class="guarantee_item">
+                            <div class="guarantee_icon"><i class="fas fa-thumbs-up"></i></div>
+                            <div class="guarantee_text">Белые методы продвижения</div>
+                            </div>
+
+                            <div class="guarantee_item">
+                            <div class="guarantee_icon"><i class="fas fa-desktop"></i></div>
+                            <div class="guarantee_text">Улучшение юзабилити сайта</div>
+                            </div>
+
+                            <div class="guarantee_item">
+                            <div class="guarantee_icon"><i class="fas fa-funnel-dollar"></i></div>
+                            <div class="guarantee_text">Повышение конверсии сайта</div>
+                            </div>
+
+                            <div class="guarantee_item">
+                            <div class="guarantee_icon"><i class="fas fa-route"></i></div>
+                            <div class="guarantee_text">Четкая стратегия развития проекта</div>
+                            </div>
+                            
+                            <div class="guarantee_item">
+                            <div class="guarantee_icon"><i class="far fa-eye"></i></div>
+                            <div class="guarantee_text">Прозрачная отчетность</div>
+                            </div>
+
+                            <div class="guarantee_item">
+                            <div class="guarantee_icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="guarantee_text">Безопасносность</div>
+                            </div>
+
+                            <div class="guarantee_item">
+                            <div class="guarantee_icon"><i class="fas fa-handshake"></i></div>
+                            <div class="guarantee_text">Индивидуальный подход</div>
+                            </div>
+
+                        </div>
+                        </div>
+                        
+                    </div>
+                </section>
+                <!-- Сферы -->
                 <section>
               <div class="_container">
                 <div>
@@ -460,7 +447,25 @@
                   </div>
                 </div>
               </div>
-            </section>               
+            </section>       
+
+
+
+                <?php if (!empty($after_posts_text)): ?>                
+                    <section>
+                        <div class="_container">
+                            <div>
+                                <h2 class="_h2 section_title"><?= $after_posts_title ?></h2>
+                            </div>                        
+                            <div class="cases_text service_text-block">
+                                <?= $after_posts_text ?>
+                            </div>                            
+                        </div>                
+                    </section>
+                <?php endif;?>
+
+
+                      
 
                 <?php if (!empty($after_guarantee_text)): ?>
                     <section>
