@@ -90,16 +90,15 @@
                         </div>                        
                     </div> 
                 </section>
-                <!-- Верхний текст -->
-                <div class="category_top-text">
-                            <?= $top_text ?>
-                </div>
-
                 <section class="form_row">
                     <div class="page_contacts-form contact_form-row">
                         <?php echo do_shortcode('[contact-form-7 id="1968" title="Контактная форма 1"]'); ?>
                     </div>
                 </section>
+                <!-- Верхний текст -->
+                <div class="category_top-text">
+                            <?= $top_text ?>
+                </div>
                 <!-- Кейсы, форма обратной связи -->
                 <section class="page__service-offer categorry_test">                                      
                     <div class="cases-block__container">
@@ -153,18 +152,12 @@
                     </div>    
                                               
                 </section>
-
-                <section class="category-list_description">
-                    <div class="category-list_description__container _container">
-                        <div class="category-list_description__text"><?php echo category_description();?></div>
-                    </div>
-                </section>
-
                 <section class="form_row">
                     <div class="page_contacts-form contact_form-row">
                         <?php echo do_shortcode('[contact-form-7 id="1968" title="Контактная форма 1"]'); ?>
                     </div>
-                </section>           
+                </section>  
+      
 
                 <!-- Этапы -->
                 <?php if($steps): ?>
@@ -520,6 +513,12 @@
                     </section>
                 <?php endif;?> 
 
+                <!-- Текст-описание -->
+                <section class="category-list_description">
+                    <div class="category-list_description__container _container">
+                        <div class="category-list_description__text"><?php echo category_description();?></div>
+                    </div>
+                </section>
 
                 <section id="lightning_contact_form" class="page__service-selection service-selection">
                     <div class="service-selection__container _container">
