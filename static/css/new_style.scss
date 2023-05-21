@@ -441,6 +441,8 @@ ul.header_cities {
 
 
 /*---------------------------------------------------------------------------------------*/
+
+
 /*------------------------------------page__main-block-----------------------------------*/
 
 .main-background1-img {
@@ -782,6 +784,7 @@ ul.header_cities {
 .page__services-block {
     position: relative;
     z-index: 6;
+    padding-bottom: 0px;
 }
 
 .services-block__title_h2 {
@@ -1172,11 +1175,9 @@ section.form_row {
 
 .page__reviews-block {
     position: relative;
-
     .reviews-slide {
-
-        .reviews_image{
-            display:none;
+        .reviews_image {
+            display: none;
         }
     }
 }
@@ -1748,6 +1749,10 @@ section.form_row {
 
 /*----------------------------------------------------category-list----------------------------------*/
 
+.category_top-text {
+    padding-top: 75px;
+}
+
 .services-block__grid {
     display: flex;
     flex-wrap: wrap;
@@ -1877,6 +1882,7 @@ section.page__service-offer,
 section.page__service-offer {
     padding: 0;
     padding-top: 75px;
+    padding-bottom: 20px;
 }
 
 .text_wrapper {
@@ -2269,33 +2275,32 @@ span.contacts_item-title {
     padding: 20px 0
 }
 
-/* -- PAGE TESTIMONIALS --*/
-.page__reviews-block.page_testimonials{
-    .main_block__wrapper{
-        max-width: 100%;
 
-        .reviews-slide{
+/* -- PAGE TESTIMONIALS --*/
+
+.page__reviews-block.page_testimonials {
+    .main_block__wrapper {
+        max-width: 100%;
+        .reviews-slide {
             max-width: 100%;
             display: flex!important;
             flex-direction: row;
-
-            .reviews_image{
+            .reviews_image {
                 display: block;
                 width: 50%;
-
-                img{
+                img {
                     height: 100%;
                     object-fit: cover;
                     border-radius: 5px 0px 0px 5px;
-
                 }
             }
-            .reviews_body{
+            .reviews_body {
                 width: 50%;
             }
         }
-    }     
+    }
 }
+
 
 /*---------------------------------------------------------------------------------------------------*/
 

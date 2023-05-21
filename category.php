@@ -249,8 +249,79 @@
                         
                     </div>
                 </section>
-                <!-- Сферы -->
-                <section>
+
+
+                <?php if (!empty($after_posts_text)): ?>                
+                    <section>
+                        <div class="_container">
+                            <div>
+                                <h2 class="_h2 section_title"><?= $after_posts_title ?></h2>
+                            </div>                        
+                            <div class="cases_text service_text-block">
+                                <?= $after_posts_text ?>
+                            </div>                            
+                        </div>                
+                    </section>
+                <?php endif;?>
+
+
+                      
+
+                <?php if (!empty($after_guarantee_text)): ?>
+                    <section>
+                        <div class="_container">
+                            <div class="text_wrapper">
+                                <div class="half_column">
+                                    <h2 class="_h2 section_title"><?= $after_guarantee_title ?></h2>
+                                    <div class="cases_text service_text-block">
+                                        <?= $after_guarantee_text ?>
+                                    </div>
+                                </div>
+                                <div class="half_column">
+                                    <img src="<?= $after_guarantee_img ?>" alt="<?= $after_guarantee_title ?>">
+                                </div>
+                            </div>
+                        </div>  
+                    </section>
+                <?php endif;?>
+                
+                <?php if($specialists): ?>                    
+                    <section>
+                        <div class="_container">
+                            <div>
+                                <h2 class="_h2 section_title">Наши специалисты</h2>
+                            </div> 
+                            <div class="staff_wrapper">
+                                <?php foreach($specialists as $specialist):?>
+                                    <div class="staff_item">
+                                        <h3 class="staff_name"><?= $specialist["specialist"] ?></h3>                                        
+                                    </div> 
+                                <?php endforeach; ?>                                
+                            </div>  
+                        </div>
+                    </section>  
+                <?php endif; ?>
+
+                <?php if (!empty($cloud_tags)): ?>
+                    <section class="cloud_tag-section ">
+                        <div class="cloud_tag-container _container">                
+                            <div class="cloud_tag-block__body"> 
+                                <div class="cloud_tag_slider">
+                                    <?php $i=0; ?>
+                                    <?php foreach($cloud_tags as $tag): ?>   
+                                        <div class="cloud_tag-slide">
+                                            <span class="cloud_tag_link"><?= $tag['tag_text'] ?></span>
+                                        </div>
+                                        <?php $i++ ?>
+                                    <?php endforeach ?>
+                                </div>  
+                            </div>
+                        </div>
+                    </section>
+                <?php endif;?> 
+
+                  <!-- Сферы -->
+                  <section>
               <div class="_container">
                 <div>
                   <h2 class="_h2 section_title">Сферы, с которыми мы работаем</h2>
@@ -440,78 +511,7 @@
                   </div>
                 </div>
               </div>
-            </section>       
-
-
-
-                <?php if (!empty($after_posts_text)): ?>                
-                    <section>
-                        <div class="_container">
-                            <div>
-                                <h2 class="_h2 section_title"><?= $after_posts_title ?></h2>
-                            </div>                        
-                            <div class="cases_text service_text-block">
-                                <?= $after_posts_text ?>
-                            </div>                            
-                        </div>                
-                    </section>
-                <?php endif;?>
-
-
-                      
-
-                <?php if (!empty($after_guarantee_text)): ?>
-                    <section>
-                        <div class="_container">
-                            <div class="text_wrapper">
-                                <div class="half_column">
-                                    <h2 class="_h2 section_title"><?= $after_guarantee_title ?></h2>
-                                    <div class="cases_text service_text-block">
-                                        <?= $after_guarantee_text ?>
-                                    </div>
-                                </div>
-                                <div class="half_column">
-                                    <img src="<?= $after_guarantee_img ?>" alt="<?= $after_guarantee_title ?>">
-                                </div>
-                            </div>
-                        </div>  
-                    </section>
-                <?php endif;?>
-                
-                <?php if($specialists): ?>                    
-                    <section>
-                        <div class="_container">
-                            <div>
-                                <h2 class="_h2 section_title">Наши специалисты</h2>
-                            </div> 
-                            <div class="staff_wrapper">
-                                <?php foreach($specialists as $specialist):?>
-                                    <div class="staff_item">
-                                        <h3 class="staff_name"><?= $specialist["specialist"] ?></h3>                                        
-                                    </div> 
-                                <?php endforeach; ?>                                
-                            </div>  
-                        </div>
-                    </section>  
-                <?php endif; ?>
-
-                <?php if (!empty($cloud_tags)): ?>
-                    <section class="cloud_tag-section ">
-                        <div class="cloud_tag-container _container">                
-                            <div class="cloud_tag-block__body"> 
-                                <div class="cloud_tag_slider">
-                                    <?php $i=0; ?>
-                                    <?php foreach($cloud_tags as $tag): ?>   
-                                        <div class="cloud_tag-slide">
-                                            <span class="cloud_tag_link"><?= $tag['tag_text'] ?></span>
-                                        </div>
-                                        <?php $i++ ?>
-                                    <?php endforeach ?>
-                                </div>  
-                            </div>
-                        </div>
-                    </section>
-                <?php endif;?> 
+            </section>    
 
                 <!-- Текст-описание -->
                 <section class="category-list_description">
