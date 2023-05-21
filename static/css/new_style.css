@@ -2125,6 +2125,9 @@ section.page__service-offer,
 section.page__service-offer {
   padding: 0;
   padding-top: 75px;
+}
+
+.page__service-offer {
   padding-bottom: 20px;
 }
 
