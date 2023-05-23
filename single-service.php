@@ -29,7 +29,7 @@ $cloud_tags = get_field("cloud_tags", $term);
                        
                        
                        
-                        <!-- <div>
+                        <div>
                         <h1 itemprop="name" class="page-header__title"><?php the_title(); ?></h1>
                         <?php $service_price = get_field("service_price"); ?>
                         <?php if (!empty($service_price)): ?>
@@ -40,22 +40,8 @@ $cloud_tags = get_field("cloud_tags", $term);
                            <div class="page_contacts-form contact_form-row">
                                 <?php echo do_shortcode('[contact-form-7 id="2491" title="Контактная форма mini"]'); ?>
                             </div>
-                        </div> -->
-                        <div style="display: flex; flex-direction: row;">
-    <div>
-        <h1 itemprop="name" class="page-header__title"><?php the_title(); ?></h1>
-        <?php $service_price = get_field("service_price"); ?>
-        <?php if (!empty($service_price)): ?>
-            <div class="services-block__text-price">От <?= $service_price ?> ₽</div>
-        <?php endif;?>
-    </div>
-    <div class="offer_block-form">
-        <div class="page_contacts-form contact_form-row">
-            <?php echo do_shortcode('[contact-form-7 id="2491" title="Контактная форма mini"]'); ?>
-        </div>
-    </div>
-</div>
-
+                        </div>
+                        
                         
                         
                         <div itemprop="description" class="service-article_text">
