@@ -28,21 +28,21 @@ $cloud_tags = get_field("cloud_tags", $term);
                         <img loading="lazy" itemprop="image" class="service-article_img" src="<?php the_post_thumbnail_url() ?>" alt="<?php echo $image_alt ?>" title="<?php echo $image_title ?>">
                        
                        
-                        <div>
-                        <div>
+                
+                    <div>
                         <h1 itemprop="name" class="page-header__title"><?php the_title(); ?></h1>
-                        <?php $service_price = get_field("service_price"); ?>
-                        <?php if (!empty($service_price)): ?>
-                        <div class="services-block__text-price">От <?= $service_price ?> ₽</div>
-                        <?php endif;?>
+                            <?php $service_price = get_field("service_price"); ?>
+                            <?php if (!empty($service_price)): ?>
+                                <div class="services-block__text-price">Цена от <?= $service_price ?> ₽</div>
+                            <?php endif;?>
                         <?php echo do_shortcode('[contact-form-7 id="2491" title="Контактная форма mini"]'); ?>
-                        </div>
+                    </div>
                         <!-- <div class="offer_block-form">
                            <div class="page_contacts-form contact_form-row">
                                 
                             </div>
                         </div> -->
-                        </div>
+                
                         
                         
                         <div itemprop="description" class="service-article_text">
