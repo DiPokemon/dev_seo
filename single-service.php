@@ -30,10 +30,9 @@ $cloud_tags = get_field("cloud_tags", $term);
                        
                 
                     <div>
-                        <h1 itemprop="name" class="page-header__title"><?php the_title(); ?></h1>
                             <?php $service_price = get_field("service_price"); ?>
                             <?php if (!empty($service_price)): ?>
-                                <div class="services-block__text-price">Цена от <?= $service_price ?> ₽</div>
+                                <div class="services-block__text-price"><h2>Цена на услугу от</h2><?= $service_price ?> ₽</div>
                             <?php endif;?>
                         <?php echo do_shortcode('[contact-form-7 id="2491" title="Контактная форма mini"]'); ?>
                     </div>
