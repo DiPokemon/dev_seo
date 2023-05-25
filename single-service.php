@@ -29,19 +29,16 @@ $cloud_tags = get_field("cloud_tags", $term);
                        
                        
                 
-                    <div>
+            <section>
+                <div class="single-services-block__price">
                             <?php $service_price = get_field("service_price"); ?>
                             <?php if (!empty($service_price)): ?>
                                 <div class="services-block__text-price">Цена от <?= $service_price ?> ₽</div>
                             <?php endif;?>
-                        <?php echo do_shortcode('[contact-form-7 id="2491" title="Контактная форма mini"]'); ?>
-                    </div>
-                        <!-- <div class="offer_block-form">
-                           <div class="page_contacts-form contact_form-row">
-                                
-                            </div>
-                        </div> -->
-                
+                            <?php echo do_shortcode('[contact-form-7 id="2491" title="Контактная форма mini"]'); ?>
+                </div> 
+            </section>
+                        
                         
                         
                         <div itemprop="description" class="service-article_text">
