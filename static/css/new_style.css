@@ -2668,16 +2668,12 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
   font-size: 30px;
 }
 
-#wpcf7-f2491-p2094-o1 .contact_form {
+#wpcf7-f2491-p2094-o1.contact_form {
   display: inline-block;
 }
 
-#wpcf7-f2491-p2094-o1.wpcf7-tel {
-  width: 400px;
-}
-
-#wpcf7-f2491-p2094-o1.wpcf7-submit {
-  width: 310px;
+#wpcf7-f2491-p2094-o1.wpcf7-form input {
+  width: 50% !important;
 }
 
 .single-services-block {
