@@ -32,7 +32,8 @@
                         'theme_location'  => 'footer_menu',
                         'add_li_class'    => 'menu-footer__item'               
                     ) );
-                ?>              
+                ?>         
+                     
             </div>    
           </div>
           

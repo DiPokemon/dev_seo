@@ -254,7 +254,7 @@
                     <input type="radio" name="tab_btn" id="tab_btn_1" value="" checked>
                     <label for="tab_btn_1">Разработка</label>
                     <input type="radio" name="tab_btn" id="tab_btn_2" value="">
-                    <label for="tab_btn_2">SEO</label>
+                    <label for="tab_btn_2">Продвижение сайтов</label>
                     <input type="radio" name="tab_btn" id="tab_btn_3" value="">
                     <label for="tab_btn_3">Контекстная реклама</label>
                     <input type="radio" name="tab_btn" id="tab_btn_4" value="">
@@ -277,7 +277,7 @@
                   </div>
                   <div id="tab_2" class="tabs_block">
                       <div class="tab_header">
-                        <div class="tab_title">SEO</div>
+                        <div class="tab_title">Продвижение сайтов</div>
                         <div class="tab_price">от <span>21 000</span> ₽</div>
                       </div>
                       <div class="tab_body">
@@ -325,6 +325,67 @@
                 </div>  
               </div>
             </section>
+
+            <section>
+              <div class="_container">
+                <div>
+                  <h2 class="_h2 section_title">Тарифы-мобилка</h2>
+                </div>
+                <div class="accordion">
+
+                  <input type="checkbox" name="chacor" id="step_1" />
+                  <label for="step_1">Разработка</label>
+                  <div class="acor-body">
+                  <div class="tab_header">
+                        <div class="tab_title">Разработка под ключ</div>
+                        <div class="tab_price">от <span>50 000</span> ₽</div>
+                      </div>
+                 <p> Разрабатываем индивидуальные сайты с продающим дизайном, интерактивным функционалом под разные бизнес задачи.
+                        Основательно прорабатываем каждый из этапов разработки. Особое внимание уделяем стадии тестирования перед сдачей проекта.</p>
+                  </div>
+
+                  <input type="checkbox" name="chacor" id="step_2" />
+                  <label for="step_2">Продвижение сайтов</label>
+                  <div class="acor-body">
+                  <div class="tab_header">
+                  <div class="tab_title">SEO</div>
+                        <div class="tab_price">от <span>21 000</span> ₽</div>
+                      </div>
+                  
+                    <p>SEO продвижение — эффективный маркетинговый инструмент, который принесет вам новых клиентов при грамотной оптимизации. 
+                        Результаты будут видны не сразу, как это происходит в рекламе. SEO — это длительная стратегия, которая и результат приносит 
+                        на более долгое время.</p>                    
+                  </div>
+                  <input type="checkbox" name="chacor" id="step_3" />
+                  <label for="step_3">Контекстная реклама</label>
+                  <div class="acor-body">
+                  <div class="tab_header">
+                  <div class="tab_title">Контекстная реклама</div>
+                        <div class="tab_price">от <span>25 000</span> ₽</div>
+                      </div>
+                  
+                    <p>Контекстная реклама – один из самых эффективных источников трафика на ваш сайт. Размещение рекламы в Яндексе и Google 
+                        поможет Вам в разы увеличить продажи, оповестить и завлечь нужный контингент клиентов и выработать позитивное мнение о компании.</p>                    
+                  </div>
+
+                  
+                  <input type="checkbox" name="chacor" id="step_4" />
+                  <label for="step_4">Маркетплейсы</label>
+                  <div class="acor-body">
+                  <div class="tab_header">
+                  <div class="tab_title">Маркетплейсы</div>
+                        <div class="tab_price">от <span>25 000</span> ₽</div>
+                      </div>
+                  
+                    <p>Все больше компаний появляются на маркетплейсах для того чтобы вести там свой бизнес, и получать хорошую прибыль. 
+                        Но конкуренция везде огромная. Поэтому, необходимо понимать как можно выделиться и результативно продвинуть свой 
+                        товар на онлайн-площадке.</p>                    
+                  </div>
+                  
+                </div>
+                          
+              </div>
+            </section>  
 
             <section class="page__cases-block cases">
               <div class="cases-block__container _container">
@@ -1122,3 +1183,29 @@
             </section>
 
 <?php get_footer(); ?>
+
+<script>
+  window.addEventListener('load', function() {
+  var blockWrappers = document.querySelectorAll('.main_block__wrapper');
+  var maxHeight = 0;
+
+  // Находим максимальную высоту блока
+  blockWrappers.forEach(function(wrapper) {
+    var blocks = wrapper.querySelectorAll('.slider_wrapper');
+    blocks.forEach(function(block) {
+      var height = block.offsetHeight;
+      if (height > maxHeight) {
+        maxHeight = height;
+      }
+    });
+  });
+
+  // Устанавливаем максимальную высоту для всех блоков
+  blockWrappers.forEach(function(wrapper) {
+    var blocks = wrapper.querySelectorAll('.slider_wrapper');
+    blocks.forEach(function(block) {
+      block.style.height = maxHeight + 'px';
+    });
+  });
+});
+  </script>

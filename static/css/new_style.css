@@ -3254,7 +3254,8 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .main-image, .main-content {
+  .main-image,
+  .main-content {
     width: 100%;
   }
   .main-image {
@@ -3514,7 +3515,8 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .main-content, .main-image {
+  .main-content,
+  .main-image {
     width: 100%;
   }
   .main-image_grid {
@@ -3793,5 +3795,16 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit {
 @media (max-width: 500px) {
   .spotlight_wrap {
     height: 350px;
+  }
+}
+@media (max-width: 973px) {
+  .acor-body .tab_header {
+    padding-bottom: 25px;
+    color: #f7f2ff;
+    line-height: 1.5;
+  }
+  .acor-body p {
+    line-height: 1.5;
+    color: #f7f2ff;
   }
 }/*# sourceMappingURL=new_style.css.map */
