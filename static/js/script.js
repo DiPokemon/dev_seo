@@ -418,3 +418,27 @@ cityList.addEventListener("click", function(e) {
         cityList.style.display = "none";
     }
 });
+// выравнивание отзывов
+window.addEventListener('load', function() {
+    var blockWrappers = document.querySelectorAll('.main_block__wrapper');
+    var maxHeight = 0;
+
+    // Находим максимальную высоту блока
+    blockWrappers.forEach(function(wrapper) {
+        var blocks = wrapper.querySelectorAll('.slick-slide');
+        blocks.forEach(function(block) {
+            var height = block.offsetHeight;
+            if (height > maxHeight) {
+                maxHeight = height;
+            }
+        });
+    });
+
+    // Устанавливаем максимальную высоту для всех блоков
+    blockWrappers.forEach(function(wrapper) {
+        var blocks = wrapper.querySelectorAll('.slick-slide');
+        blocks.forEach(function(block) {
+            block.style.height = maxHeight + 'px';
+        });
+    });
+});
