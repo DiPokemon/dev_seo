@@ -26,7 +26,7 @@
                     wp_nav_menu( array(
                         'container'       => 'nav',          
                         'container_class' => 'footer__menu menu-footer',           
-                        'menu_class'      => 'menu__item',          
+                        'menu_class'      => 'menu-footer__list',          
                         'fallback_cb'     => 'wp_page_menu',            
                         'link_class'     => 'menu-footer__link',           
                         'theme_location'  => 'footer_menu',
