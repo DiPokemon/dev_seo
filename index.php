@@ -1191,7 +1191,7 @@
 
   // Находим максимальную высоту блока
   blockWrappers.forEach(function(wrapper) {
-    var blocks = wrapper.querySelectorAll('.slider_wrapper');
+    var blocks = wrapper.querySelectorAll('.slick-slide');
     blocks.forEach(function(block) {
       var height = block.offsetHeight;
       if (height > maxHeight) {
@@ -1202,7 +1202,7 @@
 
   // Устанавливаем максимальную высоту для всех блоков
   blockWrappers.forEach(function(wrapper) {
-    var blocks = wrapper.querySelectorAll('.slider_wrapper');
+    var blocks = wrapper.querySelectorAll('.slick-slide');
     blocks.forEach(function(block) {
       block.style.height = maxHeight + 'px';
     });
