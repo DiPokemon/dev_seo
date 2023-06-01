@@ -1185,9 +1185,9 @@
 <?php get_footer(); ?>
 
 <script>
-  window.addEventListener('load', function() {
-  var blockWrappers = document.querySelectorAll('.main_block__wrapper');
-  var maxHeight = 0;
+  // window.addEventListener('load', function() {
+  // var blockWrappers = document.querySelectorAll('.main_block__wrapper');
+  // var maxHeight = 0;
 
   // Находим максимальную высоту блока
   blockWrappers.forEach(function(wrapper) {
