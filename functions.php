@@ -24,6 +24,7 @@ function topland_load_styles()
 {
   //wp_enqueue_style('style-zero', get_template_directory_uri().'/static/css/style-zero-min.css');
   wp_enqueue_style('new-style', get_template_directory_uri().'/static/css/new_style.css');
+  wp_enqueue_style('my-css', get_template_directory_uri().'/my-css.css');
   //wp_enqueue_style('style-adaptive', get_template_directory_uri().'/static/css/style-adaptive-min.css');
   wp_enqueue_style('slick', get_template_directory_uri().'/static/js/slick/slick.css');
   wp_enqueue_style('slick-theme', get_template_directory_uri().'/static/js/slick/slick-theme.css');
@@ -45,6 +46,7 @@ function topland_load_scripts()
   wp_enqueue_script('init_main_slider', get_template_directory_uri().'/static/js/init_main_slider.js', array('slick'), NULL, true);
   wp_enqueue_script('loadmore', get_template_directory_uri().'/static/js/loadmore.js', array(), NULL, true);
   wp_enqueue_script('maskedinput', get_template_directory_uri().'/static/js/maskedinput.js', array('jquery'), NULL, true);
+  
   //wp_enqueue_script('newyear_js', get_template_directory_uri().'/static/newyear/script.js', array(), NULL, true);
 //   wp_enqueue_script('loadmore', get_template_directory_uri().'/static/js/loadmore.js', array(), NULL, true);
 } 
@@ -112,6 +114,7 @@ add_theme_support('post-thumbnails');
 // Зарегистрировать меню 
 register_nav_menus([
     'main_menu' => 'Main menu',
+	'main_menu_mobile' => 'main_menu_mobile',
     'footer_menu' => 'Footer menu'
 ]);
 

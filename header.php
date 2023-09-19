@@ -151,10 +151,30 @@
         </i>
     </div>
 </div>
+   <div class="action_header">
+      <div class="action_title"><a onclick="openModal()" href="javascript:void(0)">Скидка 10% на SEO услуги!</a></div>
+      <div class="action_timer">
+        <div class="timer">
+
+          <div class="timer__items">
+
+            <div class="timer__item timer__days" data-title="дней"></div>
+            <div class="timer__divider"></div>
+            <div class="timer__item timer__hours" data-title="часов"></div>
+            <div class="timer__divider"></div>
+            <div class="timer__item timer__minutes" data-title="минут"></div>
+            <div class="timer__divider"></div>
+            <div class="timer__item timer__seconds" data-title="секунд"></div>
+
+          </div>
+
+        </div>
+    </div>
+   </div>
   <div class="wrapper">      
     <header class="header">
       <div class="header__container _container">
-        <div class="header_wrapper">
+        <div class="header_wrapper xs-hide">
           <div class="header__burger">
             <span></span>
           </div>
@@ -176,8 +196,8 @@
               'echo'          => false,               
             );
             $temp_menu = wp_nav_menu($args);
-            //$temp_menu = str_replace('<a', '<a itemprop="url" ', $temp_menu);
-            //$temp_menu = str_replace('<li', '<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" ', $temp_menu);
+            // $temp_menu = str_replace('<a', '<a itemprop="url" ', $temp_menu);
+            // $temp_menu = str_replace('<li', '<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" ', $temp_menu);
             $temp_menu = str_replace('<ul class="sub-menu"', '<ul class="sub-menu" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList"', $temp_menu);
             preg_match_all("~<a (.*?)>(.*)</a>~", $temp_menu, $matchesz);
             foreach($matchesz[0] as $value){
@@ -187,6 +207,7 @@
                 $temp_menu = str_replace($value, $temp_value, $temp_menu);
               }else{
                 $temp_value = str_replace("<span", "<span itemprop='name'", $value);
+
                 $temp_menu = str_replace($value, $temp_value, $temp_menu);
               }
             }
@@ -196,55 +217,117 @@
             <div class="logo_img"><?php the_custom_logo() ?></div>
             <div class="logo_text">topland</div>  
           </div>
-            <div class="header__location">
+          <div class="header__location">
               <div class="header__location_img"><img loading="lazy" src="<?php echo get_template_directory_uri()?>/static/img/location.svg" alt="location"/></div>
               <div class="header__location_text">
                 <div id="dropdown">
-                <span id="selectedCity">Ростов-на-Дону11</span>
-                  <ul class="header_cities">
-                    <li>Москва</li>
-                    <li>Санкт-Петербург</li>
-                    <li>Уфа</li>
-                    <li>Тольяти</li>
-                    <li>Ижевск</li>
-                    <li>Самара</li>
-                    <li>Сочи</li>
-                    <li>Красноярск</li>
-                    <li>Набережные Челны</li>
-                    <li>Краснодар</li>
-                    <li>Саратов</li>
-                    <li>Новосибирск</li>
-                    <li>Волгоград</li>
-                    <li>Казань</li>
-                    <li>Нижний Новгород</li>
-                    <li>Екатеринбург</li>
-                    <li>Краснодар</li>
-                    <li>Воронеж</li>
-                    <li>Омск</li>
-                    <li>Челябинск</li>
-                    <li>Тюмень</li>
-                    <li>Пермь</li>
-                    <li>Ростов-на-Дону</li>
+                <span id="selectedCity">Ростов-на-Дону</span>
+                  <ul class="header_cities">                    
+                    <li><a href="/">Краснодар</a></li>                    
                   </ul>
                 </div>
               </div>
             </div>
-
-
           <div class="header__hrVert"></div>
           <div class="header__contact">
             <div class="header__contact_telefon"><a href="tel:+79934481000">+7 993 448-1000</a></div>
-             <!-- <div class="header__contact_telefon-mob"><a href="tel:+79934536307"><img loading="lazy" src="<?php echo get_template_directory_uri()?>/static/img/phone.svg" alt="Телефон маркетингового агентства в Ростове"/></a></div>   -->
-             <div class="header__contact_telefon-mob"><a href="tel:+79934536307"><i class="fa-solid fa-phone"></i></a></div>                 
+            <!-- <div class="header__contact_telefon-mob"><a href="tel:+79934536307"><img loading="lazy" src="<?php echo get_template_directory_uri()?>/static/img/phone.svg" alt="Телефон маркетингового агентства в Ростове"/></a></div>   -->
+            <div class="header__contact_telefon-mob"><a href="tel:+79934481000"><i class="fa-solid fa-phone"></i></a></div>
             <div class="header_contact_href"><a class="header__link" href="https://wa.me/79514976107">Написать в What’sApp</a></div>
             <div class="header__contact_wa-mob"><a href="https://wa.me/79514976107"><i class="fa-brands fa-whatsapp"></i></a></div>
           </div>
             
         </div>
+        <div class="header_wrapper xs-show">
+          <div class="header__burger">
+            <span></span>
+          </div>
+          <?php
+            $args = array(
+              'container'       => 'nav',          
+              'container_class' => 'header__menu menu',           
+              'menu_class'      => 'menu__list',          
+              'fallback_cb'     => 'wp_page_menu',            
+              'link_class'     => 'menu__link',           
+              'theme_location'  => 'main_menu_mobile',
+              'add_li_class'    => 'menu__item',
+              'container_atts'  => array(
+                'role'      => 'navigation',
+                'itemscope' => '',
+                'itemtype'  => 'http://schema.org/SiteNavigationElement',
+              ),     
+              'items_wrap'  => '<ul itemprop="about" itemscope="" itemtype="http://schema.org/ItemList" id="%1$s" class="%2$s">%3$s</ul>',
+              'echo'          => false,               
+            );
+            $temp_menu = wp_nav_menu($args);
+            // $temp_menu = str_replace('<a', '<a itemprop="url" ', $temp_menu);
+            // $temp_menu = str_replace('<li', '<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" ', $temp_menu);
+            $temp_menu = str_replace('<ul class="sub-menu"', '<ul class="sub-menu" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList"', $temp_menu);
+            preg_match_all("~<a (.*?)>(.*)</a>~", $temp_menu, $matchesz);
+            foreach($matchesz[0] as $value){
+              if(strpos($value, "<span") === false){
+                $temp_value = preg_replace("~<a (.*?)>(.*)</a>~", "<a $1><span itemprop='name'>$2</span></a>", $value);
+
+                $temp_menu = str_replace($value, $temp_value, $temp_menu);
+              }else{
+                $temp_value = str_replace("<span", "<span itemprop='name'", $value);
+
+                $temp_menu = str_replace($value, $temp_value, $temp_menu);
+              }
+            }
+            echo $temp_menu;
+          ?>
+          <div class="header__logo">
+            <div class="logo_img"><?php the_custom_logo() ?></div>
+            <div class="logo_text">topland</div>  
+          </div>
+          <div class="header__location">
+              <div class="header__location_img"><img loading="lazy" src="<?php echo get_template_directory_uri()?>/static/img/location.svg" alt="location"/></div>
+              <div class="header__location_text">
+                <div id="dropdown">
+                <span id="selectedCity">Ростов-на-Дону</span>
+                  <ul class="header_cities">
+                    <li><a href="/">Краснодар</a></li>                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <div class="header__hrVert"></div>
+          <div class="header__contact">
+            <div class="header__contact_telefon"><a href="tel:+79934481000">+7 993 448-1000</a></div>
+            <!-- <div class="header__contact_telefon-mob"><a href="tel:+79934536307"><img loading="lazy" src="<?php echo get_template_directory_uri()?>/static/img/phone.svg" alt="Телефон маркетингового агентства в Ростове"/></a></div>   -->
+            <div class="header__contact_telefon-mob"><a href="tel:+79934481000"><i class="fa-solid fa-phone"></i></a></div>
+            <div class="header_contact_href"><a class="header__link" href="https://wa.me/79514976107">Написать в What’sApp</a></div>
+            <div class="header__contact_wa-mob"><a href="https://wa.me/79514976107"><i class="fa-brands fa-whatsapp"></i></a></div>
+          </div>
+            
+        </div>
+
+
         <hr class="header__hr">
       </div>
       
     </header>
     
   </div>
+
+  <div id="open_modal" class="promo_btn">
+    <a onclick="openModal()" href="javascript:void(0)">Акция</a>
+  </div>
+  <div id="promo_modal" class="promo_modal">
+    <div class="promo_modal_close"><a href="javascript:void(0)" class="promo_close_btn" onclick="closeModal(event)">&times;</a></div>
+    <div class="promo_title">
+      Скидка 10% на SEO услуги
+    </div>
+    <div class="promo_subtitle">
+      Акция действует только при заказе до конца <b>МАЯ</b>  и с оплатой за 2 месяца
+    </div>
+    
+    <?php echo do_shortcode('[contact-form-7 id="2772" title="Акция"]') ?>
+    
+  </div>
 <main class="page">
+
+
+
+      
